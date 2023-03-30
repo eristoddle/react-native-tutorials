@@ -2,17 +2,16 @@
   "name": "tutorial-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start --dev-client",
-    "android": "expo run:android",
-    "npx:android": "npx react-native run-android",
-    "ios": "expo run:ios",
-    "npx:ios": "npx react-native run-ios",
-    "web": "expo start --web",
+    "start": "npx expo start",
+    "android": "npx expo start --android",
+    "ios": "npx expo start --ios",
+    "web": "npx expo start --web",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
   },
   "dependencies": {
     "expo": "^48.0.9",
+    "expo-dev-client": "~2.1.6",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.4",
     "expo-updates": "~0.16.3",
@@ -25,12 +24,12 @@
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
     "react-native-web": "~0.18.10",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "expo-asset": "~8.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.27",
-    "@types/react-native": "~0.63.2",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.3.0",
