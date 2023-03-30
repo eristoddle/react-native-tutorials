@@ -12,6 +12,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.eristoddle.tutorialapp.generated.BasePackageList;
+import com.facebook.react.config.ReactFeatureFlags;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
@@ -92,6 +93,7 @@ public class MainApplication extends Application implements ReactApplication {
       UpdatesController.initialize(this);
     }
 
+    ReactFeatureFlags.dispatchPointerEvents = true;
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
