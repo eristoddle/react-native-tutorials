@@ -1,13 +1,6 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-const App: FC = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Blank Slate.</Text>
-    </View>
-  );
-};
+import Draggable from './src/components/Draggable';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,5 +11,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
 });
+
+const App: FC = () => {
+  return (
+    <View style={styles.container}>
+      <Draggable />
+    </View>
+  );
+};
 
 export default App;

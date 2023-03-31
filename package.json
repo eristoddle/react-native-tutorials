@@ -2,7 +2,7 @@
   "name": "tutorial-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx expo start",
+    "start": "npx expo start --tunnel",
     "android": "npx expo start --android",
     "ios": "npx expo start --ios",
     "web": "npx expo start --web",
