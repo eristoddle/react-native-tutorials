@@ -1,9 +1,14 @@
-import 'react-native-gesture-handler';
-import { registerRootComponent } from 'expo';
+/**
+ * @format
+ */
 
+import {AppRegistry} from 'react-native';
 import App from './App';
+import {name as appName} from './app.json';
+import ReactNativeFeatureFlags from 'react-native/Libraries/ReactNative/ReactNativeFeatureFlags';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+ReactNativeFeatureFlags.shouldEmitW3CPointerEvents = () => true;
+ReactNativeFeatureFlags.shouldPressibilityUseW3CPointerEventsForHover = () =>
+  true;
+
+AppRegistry.registerComponent(appName, () => App);
