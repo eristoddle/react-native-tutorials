@@ -26,25 +26,26 @@ const DrawScreen: FC = () => {
       0,
     )},${offsetY.toFixed(0)} `;
 
-    // Add new point to older points
+    // Add new point to existing points
     newPath.push(newPoint);
     setCurrentPath(newPath);
   };
-  console.log('currentPath', currentPath);
 
   return (
-    <View style={styles.container} onPointerMove={onMove}>
+    <View style={styles.container}>
       <Text style={styles.label}>Draw Something</Text>
-      <Svg height={height * 0.7} width={width}>
-        <Path
-          d={currentPath.join('')}
-          stroke={'blue'}
-          fill={'transparent'}
-          strokeWidth={2}
-          strokeLinejoin={'round'}
-          strokeLinecap={'round'}
-        />
-      </Svg>
+      <View style={styles.wrapper} onPointerMove={onMove}>
+        <Svg height={height * 0.8} width={width}>
+          <Path
+            d={currentPath.join('')}
+            stroke={'blue'}
+            fill={'transparent'}
+            strokeWidth={2}
+            strokeLinejoin={'round'}
+            strokeLinecap={'round'}
+          />
+        </Svg>
+      </View>
     </View>
   );
 };
@@ -52,11 +53,16 @@ const DrawScreen: FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  wrapper: {
+    borderColor: 'blue',
+    borderWidth: 2,
+    height: height * 0.8,
+    width,
   },
   label: {
-    margin: 50,
-    textAlign: 'center',
     color: 'blue',
     fontSize: 20,
     fontWeight: 'bold',
