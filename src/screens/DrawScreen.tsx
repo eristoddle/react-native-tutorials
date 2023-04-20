@@ -18,7 +18,6 @@ const DrawScreen: FC = () => {
     const {
       nativeEvent: {offsetX, offsetY},
     } = event;
-    console.log(offsetX, offsetY);
     const newPath = [...currentPath];
 
     // Create a new point
