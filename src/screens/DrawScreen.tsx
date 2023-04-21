@@ -12,13 +12,13 @@ import {Path, Svg} from 'react-native-svg';
 const {height, width} = Dimensions.get('window');
 
 const DrawScreen: FC = () => {
-  const [currentPath, setCurrentPath] = useState<string[]>([]);
+  const [path, setPath] = useState<string[]>([]);
 
   const onMove = (event: NativeSyntheticEvent<NativePointerEvent>): void => {
     const {
       nativeEvent: {offsetX, offsetY},
     } = event;
-    const newPath = [...currentPath];
+    const newPath = [...path];
 
     // Create a new point
     const newPoint = `${newPath.length === 0 ? 'M' : ''}${offsetX.toFixed(
@@ -27,7 +27,7 @@ const DrawScreen: FC = () => {
 
     // Add new point to existing points
     newPath.push(newPoint);
-    setCurrentPath(newPath);
+    setPath(newPath);
   };
 
   return (
@@ -36,7 +36,7 @@ const DrawScreen: FC = () => {
       <View style={styles.wrapper} onPointerMove={onMove}>
         <Svg height={height * 0.8} width={width}>
           <Path
-            d={currentPath.join('')}
+            d={path.join('')}
             stroke={'blue'}
             fill={'transparent'}
             strokeWidth={2}
